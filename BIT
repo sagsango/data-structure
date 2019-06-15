@@ -1,94 +1,60 @@
-#include<bits/stdc++.h>
-#include<ext/pb_ds/assoc_container.hpp>
-#include<ext/pb_ds/tree_policy.hpp>
-using namespace __gnu_pbds;
-using namespace std;
-template <typename T>
-using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
-#define pb push_back
-#define srt(a) sort(a.begin(),a.end())
-#define rsrt(a) sort(a.rbegin(),a.rend())
-#define lb(a,b) lower_bound(a.begin(),a.end(),b)
-#define ub(a,b) upper_bound(a.begin(),a.end(),b)
-#define MOD ((int)(1e9+7))
-#define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
-#define int long long
-#define float long double
-#define sqrt sqrtl
-#define cbrt cbrtl
-typedef vector<int> vi;
-typedef vector<float> vf;
-typedef pair<float,int> fi;
-typedef pair<int,int> ii;
-typedef vector<ii> vii;
-typedef vector<fi> vfi;
-typedef vector<vi> vvi;
-typedef vector<vf> vvf;
-typedef vector<vii> vvii;
-typedef vector<bool> vb;
-typedef vector<string> vs;
-typedef priority_queue<int> pqi;
-typedef priority_queue<ii> pqii;
-typedef priority_queue<fi> pqfi;
-typedef priority_queue <int, vector<int>, greater<int> > rpqi; 
-typedef priority_queue <ii, vector<ii>, greater<ii> > rpqii; 
-typedef priority_queue <fi, vector<fi>, greater<fi> > rpqfi; 
+#include <cstdio>
+#define LSOne(S) (S & (-S))
 
-
-template <typename T>
-class BIT{
-	// binary index tree or fenwik tree
-	// index starts from 1 to n
-	int *fen, size;
+class BIT {
+	int* ft, size;
 public:
-    // allocate memory
+	// initialize a BIT of n elements to zero
 	BIT(int n) {
 		size = n;
-		fen = new T [n+1];
+		ft = new int[n+1];
 	}
-	// free memory
-	~BIT() {
-		delete [] fen;
+
+	~BIT()	{
+		delete [] ft;
 	}
-    // sum of the prifix till pth position
-	T sum(int p) {
-		T ans = 0;
-	    for(int i = p;i;i -= i & -i)
-		ans += fen[i];
-	    return ans;
+
+	// returns sum of the range [1...b]
+	int sum(int b) {
+		int sum = 0;
+		for (; b; b -= LSOne(b)) sum += ft[b];
+		return sum;
 	}
+
+	// returns sum of the range [a...b]
+	int sum(int a, int b) {
+		return sum(b) - (a == 1 ? 0 : sum(a - 1));
+	}
+
 	// update value of the k-th element by v (v can be +ve/inc or -ve/dec)
 	// i.e., increment or decrement kth element by a value v
-	void update(int p,T val){
-	    for(int i = p;i <= size;i += i & -i)
-		fen[i] += val;
-    }
+	void update(int k, int v) {
+		for (; k <= size; k += LSOne(k)) ft[k] += v;
+	}
+
     // divide each original frequency by c
-	void scaleDown(T c){
-        for (int i=1 ; i<=size ; i++) fen[i] /= c;
+	void scaleDown(int c){
+        for (int i=1 ; i<=size ; i++) ft[i] /= c;
     }
+
     // multiply each original frequency by c
-    void scaleUp(T c){
-        for (int i=1 ; i<=size ; i++) fen[i] *= c;
+    void scaleUp(int c){
+        for (int i=1 ; i<=size ; i++) ft[i] *= c;
     }
 };
 
+int main()  {
+    BIT b(10);
+    printf("%d\n", b.sum(10));
 
-int32_t main()
-{
-	IOS
-	BIT<int>bit(10);
-	
-	for(int i=1;i<=10;i++)
-	{    
-		//Taking the array elements
-		int x;cin>>x;bit.update(i,x);
-	}
-	
-	// Now perform required updation and sum query
-	
-	
-	
+    b.update(5, 10);
+    printf("%d %d %d %d\n", b.sum(4), b.sum(5), b.sum(10), b.sum(6, 10));
+
+    b.scaleUp(2);
+    printf("%d %d %d %d\n", b.sum(4), b.sum(5), b.sum(10), b.sum(6, 10));
+
+    b.scaleDown(2);
+    printf("%d %d %d %d\n", b.sum(4), b.sum(5), b.sum(10), b.sum(6, 10));
+
+    return 0;
 }
-
-			
