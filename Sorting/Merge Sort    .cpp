@@ -1,5 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
+
+
+######################################################################################################################
 void merge(int arr[],int l1,int r1,int l2,int r2)
 {
 	int tarr[abs(l1-r1)+1+abs(l2-r2)+1];
@@ -33,7 +36,7 @@ void m_sort(int arr[],int l,int r)
 	return;
 	else
 	{
-		int m=(l+r)/2;
+	    int m=(l+r)/2;
 	    m_sort(arr,l,m);
 	    m_sort(arr,m+1,r);
 	    merge(arr,l,m,m+1,r);
@@ -52,23 +55,7 @@ int main()
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+###################################################################################################################
 
 //Same but better implimentation
 #include<bits/stdc++.h>
