@@ -1,5 +1,5 @@
-/Merge Sort : NlogN  :recursion is used   :first function divide then sort and combine
-//Quick Sort : NlogN  :recursion is used   :first function sort 1 key element and then divide it into smaller tasks
+Merge Sort : NlogN  :recursion is used   :first function divide then sort and combine
+Quick Sort : NlogN  :recursion is used   :first function sort 1 key element and then divide it into smaller tasks
 #include<bits/stdc++.h>
 using namespace std;
 void quick_sort(vector<int>&v,int l,int r)
