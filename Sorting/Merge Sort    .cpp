@@ -32,8 +32,7 @@ void merge(int arr[],int l1,int r1,int l2,int r2)
 
 void m_sort(int arr[],int l,int r)
 {
-	if(l==r)
-	return;
+	if(l==r) return;
 	else
 	{
 	    int m=(l+r)/2;
