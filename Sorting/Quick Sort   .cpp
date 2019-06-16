@@ -43,12 +43,7 @@ void quick_sort(vector<int>&v,int l,int r)
 	   quick_sort(v,l,mid-1);
            quick_sort(v,mid+1,r);
     }
-}
-	
-	
-	
-	
-	
+}	
 int main()
 {
 	int size;
@@ -102,7 +97,6 @@ void quickSort(int input[], int size) {
   quickSort(input,ns);
   quickSort(input+ns+1,nb);
 }
-
 int main()
 {
 	int input[1000];
