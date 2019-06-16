@@ -1,5 +1,3 @@
-
-
 void bubble_sort(int arr[],int n)
 {
     for(int i=0;i<n;i++)
@@ -9,3 +7,11 @@ void bubble_sort(int arr[],int n)
         swap(arr[j],arr[j+1]);
     }
 }
+
+/*
+Applcations
+1.No of Inversion count.
+
+
+
+*/
