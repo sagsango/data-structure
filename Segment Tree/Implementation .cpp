@@ -1,3 +1,6 @@
+/**
+*  Range Sum and Single index Updation
+**/
 #define MAXN 100001
 int n,a[MAXN], t[4*MAXN];
 
