@@ -7,6 +7,7 @@ void build(int a[], int v, int tl, int tr) {
         int tm = (tl + tr) / 2;
         build(a, v*2, tl, tm);
         build(a, v*2+1, tm+1, tr);
+        t[v]=max(t[2*v],t[2*v+1]);
     }
 }
 
