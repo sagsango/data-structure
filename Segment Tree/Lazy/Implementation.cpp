@@ -1,3 +1,6 @@
+/**
+* Range Updation and Range Max query
+**/
 #define MAXN 100001
 int n, a[MAXN],t[4*MAXN],lazy[4*MAXN];
 void build(int a[], int v, int tl, int tr) {
