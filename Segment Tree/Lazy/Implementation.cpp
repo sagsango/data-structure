@@ -1,5 +1,5 @@
 #define MAXN 100001
-int n, a[MAXN],t[4*MAXN];
+int n, a[MAXN],t[4*MAXN],lazy[4*MAXN];
 void build(int a[], int v, int tl, int tr) {
     if (tl == tr) {
         t[v] = a[tl];
