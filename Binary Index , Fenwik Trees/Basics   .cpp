@@ -35,15 +35,16 @@ typedef priority_queue <ii, vector<ii>, greater<ii> > rpqii;
 typedef priority_queue <fi, vector<fi>, greater<fi> > rpqfi; 
 /*
 
-int fen[MAX_N];
+const int N=1e6;
+vector<int>B(N+1);
 void update(int p,int val){
 	for(int i = p;i <= n;i += i & -i)
-		fen[i] += val;
+		B[i] += val;
 }
 int sum(int p){
 	int ans = 0;
 	for(int i = p;i;i -= i & -i)
-		ans += fen[i];
+		ans += B[i];
 	return ans;
 }
 
