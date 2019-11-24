@@ -1,3 +1,8 @@
+Problem    :     https://codeforces.com/gym/260938/problem/D2
+           :     Kth element with range compression
+           :     with range compression ordered_set<int> can be used as duplicate values
+           :     KickStart 2019 Round-H : also has problem on Kth element.
+
 class OrderedTree {
     private:int *bit = new int[1000001];
     private:int length=1000000LL;
