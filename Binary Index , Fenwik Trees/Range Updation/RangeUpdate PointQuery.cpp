@@ -26,7 +26,7 @@ class RangeBIT{
 		int s=0;while(I>0){s+=v[I];I-=I&-I;}return s;
 	}
 	public:
-	void range_add(int l,int r,int val)
+	void range_add(int l,int r,int val)  // Note use rage_add(point,point,val) : for point updation
 	{
 		add(l+0,+val);
 		add(r+1,-val);
