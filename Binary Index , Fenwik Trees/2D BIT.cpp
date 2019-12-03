@@ -5,8 +5,9 @@ Solution                  :   https://codeforces.com/contest/341/submission/4383
 :::NOT YET COMPLETED & TESTED
 class BIT{
 	/**
-	 * Function : add in submatix
-	 *          : sum in submatix
+	 * Function : add in submatix  : range updation
+	            : add at point     : point updation
+	            : sum in submatix  : range query
 	 * O(logn * longm ) add
 	 * O(logn * logm  ) sum
 	 **/
@@ -28,22 +29,22 @@ class BIT{
 		s+=B[i][j];
 		return s;
 	}
-    private:
-    void add(int x,int y,int val)
+        public : //for point updation
+        void add(int x,int y,int val)
 	{
 		for(int i=x;i<=N;i+=i&-i)
 		for(int j=y;j<=M;j+=j&-j)
 		B[i][j]+=val;
 	}
-	public:
+	public: //range updation
 	void matix_add(int x1,int y1,int x2,int y2,int val)
 	{
-		add(x2,y2,val);
+		add(x2,y2,+val);
 		add(x1-1,y2,-val);
 		add(x2,y1-1,-val);
-		add(x1-1,y1-1,val);
+		add(x1-1,y1-1,+val);
 	}
-	public:
+	public: //range query
 	int matix_sum(int x1,int y1,int x2,int y2)
 	{
 		int s=0;
