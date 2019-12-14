@@ -2,8 +2,8 @@ const int N=1e6;
 int lazy[4*N];
 
 void push(int v) {
-      lazy[2*v]=lazy[0][v];
-      lazy[2*v+1]=lazy[0][v];
+      lazy[2*v]=lazy[v];
+      lazy[2*v+1]=lazy[v];
       lazy[v]=0;
 }
 
