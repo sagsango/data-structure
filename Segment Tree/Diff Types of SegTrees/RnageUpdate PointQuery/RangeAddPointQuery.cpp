@@ -1,3 +1,5 @@
+source : https://codeforces.com/gym/262908/submission/66887551
+
 const int N=1e6;
 int lazy[4*N];
 
