@@ -1,15 +1,17 @@
+source : https://codeforces.com/gym/262908/submission/66887551
+
 const int N=1e6;
 int lazy[2][4*N];
 
 void push(int v) {
-      lazy[0][2*v]=lazy[0][v];
-      lazy[1][2*v]=lazy[1][v];
+      lazy[0][2*v]+=lazy[0][v];
+      lazy[1][2*v]+=lazy[1][v];
       
-      lazy[0][2*v+1]=lazy[0][v];
-      lazy[1][2*v+1]=lazy[1][v];
+      lazy[0][2*v+1]+=lazy[0][v];
+      lazy[1][2*v+1]+=lazy[1][v];
       
-      lazy[0][v]=0;
-      lazy[1][v]=0;
+      lazy[0][v]+=0;
+      lazy[1][v]+=0;
 }
 
 void update(int v, int tl, int tr, int l, int r, int addend,int parity) {
