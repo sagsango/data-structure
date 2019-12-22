@@ -19,7 +19,7 @@ void built(vector<int>&a,int v,int tl,int tr)
 }
 int query(int v,int tl,int tr,int l,int r)
 {
-      if(tl > tr || l  > r )return -1e18;
+      if(tl > tr || l  > r )return 1e18;
       if(tl==l && tr==r )
       {
           return t[v];
