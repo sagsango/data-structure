@@ -31,6 +31,6 @@ int query(int v,int tl,int tr,int l,int r)
                        query(2*v+1 , tm+1 , tr , max(l,tm+1) , r ));
       }
     /***
-    * Program is not tested 
+    * Program is  tested 
     ***/
 }
