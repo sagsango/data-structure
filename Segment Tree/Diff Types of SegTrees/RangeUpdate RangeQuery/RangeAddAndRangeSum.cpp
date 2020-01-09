@@ -1,3 +1,6 @@
+
+// Not correct 
+
 void build(int a[], int v, int tl, int tr) {
     if (tl == tr) {
         t[v] = a[tl];
@@ -21,7 +24,7 @@ void update(int v, int tl, int tr, int l, int r, int addend) {
     if (l > r) 
         return;
     if (l == tl && tr == r) {
-        t[v] += addend;
+        t[v] += addend;  
         lazy[v] += addend;
     } else {
         push(v);
