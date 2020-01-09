@@ -1,5 +1,7 @@
+#Tested
 Tutoril              :    https://cp-algorithms.com/data_structures/fenwick.html
 Practice Problem     :    https://codeforces.com/gym/259774/problem/A
+                     :    https://codeforces.com/gym/262913/submission/68431073
 
 class RangeBIT{
 	/**
