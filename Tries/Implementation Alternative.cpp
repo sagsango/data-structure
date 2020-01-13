@@ -1,3 +1,5 @@
+// https://codeforces.com/contest/1285/submission/68541677
+
 #include<bits/stdc++.h>
 #define int long long
 #define endl '\n'
