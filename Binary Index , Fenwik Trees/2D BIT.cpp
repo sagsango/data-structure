@@ -1,6 +1,28 @@
+Basics:
+const int Maxn=3010;
+int bit[Maxn][Maxn];
+void add(int x,int y){
+	for (int i=x;i<Maxn;i+=i&-i){
+		for (int j=y;j<Maxn;j+=j&-j){
+			bit[i][j]++;
+		}
+	}
+}
+int query(int x,int y){
+	int ret=0;
+	for (int i=x;i;i-=i&-i){
+		for (int j=y;j;j-=j&-j){
+			ret+=bit[i][j];
+		}
+	}
+	return ret;
+}
+
+
+-----------------------------------------------------------------------------------------------------------------------------
 Problem                   :   https://codeforces.com/contest/341/problem/D
 Solution                  :   https://codeforces.com/contest/341/submission/4383473
-
+-----------------------------------------------------------------------------------------------------------------------------
 
 :::NOT YET COMPLETED & TESTED
 class BIT{
