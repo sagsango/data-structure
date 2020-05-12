@@ -87,7 +87,7 @@ int main(){
         //x--,y--;
         update_x(1,0,n-1,x,y,v);
       }
-      else if( type=="SumQuery"){
+      else if( type=="MaxQuery"){
         int x1,y1,x2,y2;cin>>x1>>y1>>x2>>y2;
         //x1--,y1--,x2--,y2--;
         cout<< sum_x(1,0,n-1,x1,x2,y1,y2) << endl;
