@@ -1,4 +1,5 @@
-/* No updation and range query : min[l,r] max[l,r] */
+/* log(n)*log(n) */
+// use sparse table O(1) 
 
 const int maxn=3e5+5;
 vector<int>t(4*maxn),a(maxn),lg(maxn);
