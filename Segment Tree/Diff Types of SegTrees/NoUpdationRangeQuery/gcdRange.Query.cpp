@@ -1,5 +1,5 @@
 /* log(n)*log(n) */
-// use sparse table O(1) 
+// use sparse table O(log(n)) //
 
 const int maxn=3e5+5;
 vector<int>t(4*maxn),a(maxn),lg(maxn);
