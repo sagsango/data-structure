@@ -1,5 +1,31 @@
-source : https://codeforces.com/gym/262908/submission/66887551
+// https://cses.fi/problemset/result/504376/
+const int maxn = 2e5+10;
+vector<int>lazy(maxn<<2);
+int n,m;
+void push(int r){
+	lazy[r<<1]+=lazy[r];
+	lazy[(r<<1)+1]+=lazy[r];
+	lazy[r]=0;
+}
+void update(int rt,int tl,int tr,int l,int r,int addend){
+	if(l>r)return;
+	if(l==tl&&r==tr){lazy[rt]+=addend;return;}
+	push(rt);
+	update((rt<<1),tl,(tl+tr)>>1,l,min(r,(tl+tr)>>1),addend);
+	update((rt<<1)+1,((tl+tr)>>1)+1,tr,max(l,((tl+tr)>>1)+1),r,addend);
+}
+int query(int rt,int tl,int tr,int pos){
+	if(tl==tr)return lazy[rt];
+	push(rt);
+	if(pos<=((tl+tr)>>1))return query(rt<<1,tl,(tl+tr)>>1,pos);
+	return query((rt<<1)+1,((tl+tr)>>1)+1,tr,pos);
+}
 
+
+
+
+
+//   https://codeforces.com/gym/262908/submission/66887551
 const int N=1e6;
 int lazy[4*N];
 
