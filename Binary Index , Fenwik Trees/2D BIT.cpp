@@ -1,22 +1,34 @@
 Basics:
-const int Maxn=3010;
-int bit[Maxn][Maxn];
-void add(int x,int y){
-	for (int i=x;i<Maxn;i+=i&-i){
-		for (int j=y;j<Maxn;j+=j&-j){
-			bit[i][j]++;
+
+//  https://cses.fi/problemset/result/505224/
+const int maxn = 1000+5;
+vector<vector<int>>B(maxn,vector<int>(maxn));
+int n;// n * n
+void update(int x,int y,int val){
+	while( x  <= n ){
+		int _y = y;
+		while( _y <= n ){
+			B[x][_y]+=val;
+			_y+=_y&-_y;
 		}
+		x+=x&-x;
 	}
 }
 int query(int x,int y){
-	int ret=0;
-	for (int i=x;i;i-=i&-i){
-		for (int j=y;j;j-=j&-j){
-			ret+=bit[i][j];
+	int s=0;
+	while( x > 0 ){
+		int _y = y;
+		while( _y > 0 ){
+			s+=B[x][_y];
+			_y-=_y&-_y;
 		}
+		x-=x&-x;
 	}
-	return ret;
+	return s;
 }
+
+
+
 
 
 -----------------------------------------------------------------------------------------------------------------------------
