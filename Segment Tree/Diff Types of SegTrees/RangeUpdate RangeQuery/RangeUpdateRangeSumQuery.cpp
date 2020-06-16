@@ -2,11 +2,11 @@
 const int maxn = 5e5+10;
 vector<int>t(maxn<<3),lazy(maxn<<3,-1);
 int n;
-void push(int rt,int l,int r){
-	if( lazy[rt] == - 1 ) return; // -1 means no updation
-	int m=(l+r)>>1;
-	t[rt<<1]=lazy[rt]*(m-l+1);
-	t[rt<<1|1]=lazy[rt]*(r-m);
+void push(int rt,int tl,int tr){
+	if( lazy[rt] == -1 )return;
+	int m = (tl+tr)>>1;
+	t[rt<<1]=lazy[rt]*(m-tl+1);
+	t[rt<<1|1]=lazy[rt]*(tr-m);
 	lazy[rt<<1]=lazy[rt<<1|1]=lazy[rt];
 	lazy[rt]=-1;
 }
