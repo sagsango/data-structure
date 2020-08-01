@@ -13,7 +13,7 @@ class maxstack{
 		type mx = st.empty() ? x :  x > st.top().second ? x : st.top().second;
 		st.push({x,mx});
 	}
-	type mxn(){
+	type max(){
 		return st.top().second;
 	}
 };
