@@ -22,7 +22,7 @@ class minqueue{
 	}
 	type min(){
 		if( st1.empty() ) return st2.top().second;
-		if( st2.epmty() ) return st1.top().second;
+		if( st2.empty() ) return st1.top().second;
 		type  x = st1.top().second < st2.top().second ? st1.top().second : st2.top().second;
 		return x;
 	}
