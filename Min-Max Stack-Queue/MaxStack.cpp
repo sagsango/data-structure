@@ -3,7 +3,7 @@ class maxstack{
 	private:
 	stack<pair<type,type>>st;
 	public:
-	bool size()  { 	return st.size(); 	 }
+	int size()  { 	return st.size(); 	 }
 	bool empty() {	return st.empty();	 }
 	type pop(){
 		type x = st.top().first; st.pop();
