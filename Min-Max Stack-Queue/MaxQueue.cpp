@@ -5,7 +5,7 @@ class maxqueue{
 	private:
 	stack<pair<type,type>>st1,st2;
 	public:
-	bool size()  { 	return st1.size() + st2.size();		 }
+	int  size()  { 	return st1.size() + st2.size();		 }
 	bool empty() {	return st1.empty() & st2.empty();	 }
 	type pop(){
 		if( st2.empty() ){
