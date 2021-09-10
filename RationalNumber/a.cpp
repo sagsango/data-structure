@@ -5,11 +5,12 @@
 class rationalNum{
 	// this data is hidden form user.
 	private:
-		int nmr, dmr; // numenator & denominator
+		typedef long long ll;
+		ll nmr, dmr; // numenator & denominator
 	public:
 		// these functionality are aviable for user, not implimentation.
 		rationalNum():nmr(0),dmr(1){}
-		rationalNum(int nmr, int dmr):nmr(nmr),dmr(dmr){}
+		rationalNum(ll nmr, ll dmr):nmr(nmr),dmr(dmr){}
 		rationalNum operator+(rationalNum); // binary 
 		rationalNum operator-(rationalNum); // binary
 		rationalNum operator*(rationalNum); // binary
@@ -29,7 +30,7 @@ rationalNum rationalNum::operator+(rationalNum other){
 		c.dmr = 1;
 		return c;
 	}
-	int g = std::gcd(c.nmr,c.dmr);
+	ll g = std::gcd(c.nmr,c.dmr);
 	if( g != 1){
 		c.nmr /= g;
 		c.dmr /= g;
@@ -46,7 +47,7 @@ rationalNum rationalNum::operator-(rationalNum other){
 		c.dmr = 1;
 		return c;
 	}
-	int g = std::gcd(c.nmr,c.dmr);
+	ll g = std::gcd(c.nmr,c.dmr);
 	if( g != 1){
 		c.nmr /= g;
 		c.dmr /= g;
@@ -63,7 +64,7 @@ rationalNum rationalNum::operator*(rationalNum other){
 		c.dmr = 1;
 		return c;
 	}
-	int g = std::gcd(c.nmr,c.dmr);
+	ll g = std::gcd(c.nmr,c.dmr);
 	if( g != 1){
 		c.nmr /= g;
 		c.dmr /= g;
@@ -80,7 +81,7 @@ rationalNum rationalNum::operator/(rationalNum other){
 		c.dmr = 1;
 		return c;
 	}
-	int g = std::gcd(c.nmr,c.dmr);
+	ll g = std::gcd(c.nmr,c.dmr);
 	if( g != 1){
 		c.nmr /= g;
 		c.dmr /= g;
